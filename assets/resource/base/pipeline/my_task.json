@@ -1,5 +1,338 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {}
+    "空过": {
+        "action": "Click",
+        "target": [
+            642,
+            313,
+            0,
+            0
+        ]
+    },
+    "确定": {
+        "recognition": "OCR",
+        "expected": "确定",
+        "action": "Click"
+    },
+    "天运的游戏盘": {
+        "recognition": "OCR",
+        "expected": "天运的游戏盘",
+        "action": "DoNothing",
+        "next": [
+            "穷极之人的游戏盘"
+        ]
+    },
+    "穷极之人的游戏盘": {
+        "recognition": "OCR",
+        "expected": "穷极之人的游戏盘",
+        "action": "Click",
+        "next": [
+            "点击游玩"
+        ]
+    },
+    "点击游玩": {
+        "recognition": "OCR",
+        "expected": "游玩",
+        "action": "Click",
+        "next": [
+            "设置券"
+        ]
+    },
+    "设置券": {
+        "recognition": "OCR",
+        "expected": "游戏券的消耗数量",
+        "action": "Click",
+        "target": [
+            320,
+            295,
+            0,
+            0
+        ],
+        "next": [
+            "设置难度"
+        ]
+    },
+    "设置难度": {
+        "recognition": "OCR",
+        "expected": "敌人的强度",
+        "action": "DoNothing",
+        "target": [
+            955,
+            295,
+            0,
+            0
+        ],
+        "next": [
+            "开始游玩"
+        ]
+    },
+    "开始游玩": {
+        "action": "Click",
+        "target": [
+            800,
+            566,
+            0,
+            0
+        ],
+        "next": [
+            "掷骰子1"
+        ]
+    },
+    "掷骰子1": {
+        "recognition": "OCR",
+        "expected": "掷骰子",
+        "action": "Swipe",
+        "duration": 500,
+        "end": true,
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "掷骰子2": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "target": [
+            629,
+            555,
+            0,
+            0
+        ],
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "代币剧情": {
+        "recognition": "OCR",
+        "expected": "你渴望哪一种代币",
+        "action": "DoNothing",
+        "next": [
+            "选择代币"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "选择代币": {
+        "recognition": "OCR",
+        "expected": "富足",
+        "action": "Click",
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "卡片剧情": {
+        "recognition": "OCR",
+        "expected": "卡片呢",
+        "action": "DoNothing",
+        "next": [
+            "选择卡片"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "选择卡片": {
+        "recognition": "OCR",
+        "expected": "权威.*",
+        "action": "Click",
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "选项剧情": {
+        "recognition": "TemplateMatch",
+        "template": "option.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "剧情": {
+        "recognition": "OCR",
+        "expected": "自动播放",
+        "action": "Click",
+        "target": [
+            629,
+            555,
+            0,
+            0
+        ],
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "路线选择": {
+        "recognition": "OCR",
+        "expected": [
+            "剩余移动",
+            "剩余移"
+        ],
+        "action": "DoNothing",
+        "next": [
+            "路线选择右"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "路线选择右": {
+        "action": "Click",
+        "target": [
+            746,
+            320,
+            0,
+            0
+        ],
+        "next": [
+            "路线选择左"
+        ]
+    },
+    "路线选择左": {
+        "action": "Click",
+        "target": [
+            534,
+            320,
+            0,
+            0
+        ],
+        "next": [
+            "路线选择下"
+        ]
+    },
+    "路线选择下": {
+        "action": "Click",
+        "target": [
+            640,
+            396,
+            0,
+            0
+        ],
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ]
+    },
+    "战斗开始": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "Click",
+        "next": [
+            "委托战斗开始",
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "战斗开始",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    },
+    "委托战斗开始": {
+        "recognition": "OCR",
+        "expected": "委托战斗开始",
+        "action": "Click",
+        "next": [
+            "掷骰子1",
+            "掷骰子2",
+            "代币剧情",
+            "卡片剧情",
+            "选项剧情",
+            "剧情",
+            "路线选择",
+            "天运的游戏盘"
+        ],
+        "interrupt": [
+            "确定",
+            "空过"
+        ]
+    }
 }

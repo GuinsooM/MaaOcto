@@ -1,0 +1,18 @@
+{
+    "controller": {
+        "name": "安卓端",
+        "type": "Adb"
+    },
+    "adb": {
+        "adb_path": "C:/leidian/LDPlayer9/adb.exe",
+        "address": "127.0.0.1:5555",
+        "config": {}
+    },
+    "resource": "官服",
+    "task": [
+        {
+            "name": "普通任务",
+            "option": []
+        }
+    ]
+}
